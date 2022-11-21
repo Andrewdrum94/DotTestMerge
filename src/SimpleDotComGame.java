@@ -1,13 +1,16 @@
+import java.util.Scanner;
+
 public class SimpleDotComGame {
 
     public static void main(String[] args) {
         int numOfGuesses = 0;
-        GameHelper helper = new GameHelper();
+        Scanner scanner = new Scanner(System.in);
         SimpleDotCom sdc = new SimpleDotCom();
         sdc.setLocationCells(createArray());
         boolean isAlive = true;
         while (isAlive) {
-            String guess = helper.getUserInput("Введите число:");
+            System.out.println("Введите число: ");
+            String guess = scanner.nextLine();
             String result = sdc.checkYourself(guess);
             System.out.println(result);
             ++numOfGuesses;
